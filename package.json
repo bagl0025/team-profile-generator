@@ -1,0 +1,30 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "Your challenge is to build a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person. Because testing is key to making code maintainable, you’ll also write unit tests for each part of your code and ensure that it passes all of them.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "jest": {
+    "verbose": true
+  },
+
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagl0025/team-profile-generator.git"
+  },
+  "author": "Brian Bagley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bagl0025/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/bagl0025/team-profile-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.0.3"
+  }
+}
