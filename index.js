@@ -1,3 +1,5 @@
-const Roster = require('./lib/Roster');
+const Employee = require('./lib/Employee');
+// const Employee = require('./lib/__mocks__/Employee');
 
-new Roster().officeManager();
+employeeName = new Employee().getName(); 
+// employeeId = new Employee().getId();
