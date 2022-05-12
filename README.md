@@ -32,7 +32,7 @@
   
   For more information on usage watch the following video (You can download this video from `./src/team-profile-demo.mov`):
 
-***********movie***********  
+  https://user-images.githubusercontent.com/43792505/168172324-89116da0-bf64-4497-9be6-fc69e53b2f22.mov
 
   This screenshot shows the index.html file that was produced in the demo movie.
 
