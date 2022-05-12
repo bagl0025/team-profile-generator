@@ -1,131 +1,55 @@
-# 10 Object-Oriented Programming: Team Profile Generator
 
-Your challenge is to build a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person. Because testing is key to making code maintainable, you’ll also write unit tests for each part of your code and ensure that it passes all of them.
+  
+  # Team Profile Generator
 
-Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video **and** add it to the README of your project.
+  ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+  ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
-**Note**: There is no starter code for this assignment.
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## User Story
+  This is a Command Line Interface (CLI) app that uses NodeJS, Inquirer, and Jest to gather employee information using a series of prompts. By default the first employee you enter will be the manager. You will then be presented with a choice to enter an engineer or intern. Continue entering employees until you are done. If you select engineer you will have to provide a Github account name and if you select intern you will be asked for a school name. When you are finished select `Finish Roster` to end the program an generate a web page that summarizes your employee list.
 
-```md
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
-```
+  # Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contribute](#contribute)
+  * [Test](#test)
+  * [Questions](#questions)
+  * [Github Profile](#github)
+    
+  ## Installation
+    1. At the Github repo under the `code` button select ssh or https 
+       and copy the link. 
+    2. At the command prompt navigate to the folder you want the repo in 
+       and type `git clone` and paste in the link you copied. 
+    3. Navigate to the folder created by the clone process. 
+    4. Install the required packages by typing: `npm install`.
+    5. Type `node index` to run the program.
+    
+  ## Usage
+  To execute the program type `node index` and answer the prompts that follow. 
+  
+  For more information on usage watch the following video (You can download this video from `./src/team-profile-demo.mov`):
 
-## Acceptance Criteria
+***********movie***********  
 
-```md
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
-```
+  This screenshot shows the index.html file that was produced in the demo movie.
 
-## Mock-Up
+  <img src="./src/profile_example.png" alt="team profile generator screenshot" width="600"/>
 
-The following image shows the generated HTML’s appearance and functionality. The styling in the image is just an example, so feel free to add your own styles:
+  Here is a link to the index.html file produced in the video. It is located in the repo's `dist` folder.  
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./demo.png)
+  [index.html produced in video](./dist/index.html)
 
-
-## Getting Started
-
-This Challenge will combine many of the skills you’ve learned over the first ten weeks of this course. To help you get started, we’ve provided some guidelines in addition to the User Story and Acceptance Criteria.
-
-Your application should use [Jest](https://www.npmjs.com/package/jest) to run the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) to collect input from the user. The application will be invoked by using the following command:
-
-```bash
-node index.js
-```
-
-It is recommended that you start with a directory structure that looks like this:
-
-```md
-.
-├── __tests__/             //jest tests
-│   ├── Employee.test.js
-│   ├── Engineer.test.js
-│   ├── Intern.test.js
-│   └── Manager.test.js
-├── dist/                  // rendered output (HTML) and CSS style sheet
-├── lib/                   // classes
-├── src/                   // template helper code
-├── .gitignore             // indicates which folders and files Git should ignore
-├── index.js               // runs the application
-└── package.json
-```
-
-**Important**: Make sure that you remove `dist` from the `.gitignore` file so that Git will track this folder and include it when you push up to your application's repository.
-
-The application must have these classes: `Employee`, `Manager`, `Engineer`, and `Intern`. The tests for these classes (in the `_tests_` directory) **must all pass**.
-
-The first class is an `Employee` parent class with the following properties and methods:
-
-* `name`
-
-* `id`
-
-* `email`
-
-* `getName()`
-
-* `getId()`
-
-* `getEmail()`
-
-* `getRole()`   // Returns 'Employee'
-
-The other three classes will extend `Employee`.
-
-In addition to `Employee`'s properties and methods, `Manager` will also have:
-
-* `officeNumber`
-
-* `getRole()`   // Overridden to return `Manager`
-
-In addition to `Employee`'s properties and methods, `Engineer` will also have:
-
-* `github`  // GitHub username
-
-* `getGithub()`
-
-* `getRole()`   // Overridden to return `Engineer`
-
-In addition to `Employee`'s properties and methods, `Intern` will also have:
-
-* `school`
-
-* `getSchool()`
-
-* `getRole()`   // Overridden to return `Intern`
-
-Finally, although it’s not a requirement, you should consider adding validation to ensure that the user input provided is in the proper expected format.
-
-
-## Review
-
-You are required to submit the following for review:
-
-* A walkthrough video demonstrating the functionality of the application and passing tests.
-
-* A sample HTML file generated using your application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+  ## License
+  This software is under the [MIT](https://opensource.org/licenses/MIT) license.
+  ## Contribute
+  Refer to [Contributor Covenant](https://www.contributor-covenant.org/) for contribution guidelines.
+  ## Test
+  This program uses the Jest module for testing. Tests have been written for several modules, they can be found in the __tests__ folder. You can run them all using `npm test` or you can run them individually using `npm test <file-name.test.js>`.
+  ## Questions
+  Contact author at bagley@umn.edu for questions or to report issues.
+  ## GitHub
+  https://github.com/bagl0025/team-profile-generator
+  
