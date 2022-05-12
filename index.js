@@ -3,6 +3,7 @@ const fs = require('fs');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
+const generateRoster = require('./src/generateRoster');
 
 // create employee array
 var employees = [];
@@ -127,7 +128,7 @@ function runApp () {
                 addIntern();
             }
             else {
-                console.log(employees);
+                generateRoster(employees);
                 return false;
             }
         });    
@@ -140,6 +141,7 @@ function runApp () {
             // objectify
             const  { name, id, email, officeNumber} = answers; 
             const manager = new Manager (name, id, email, officeNumber);
+            manager.role = manager.getRole();
             employees.push(manager);
             pickRole();
         }); 
@@ -151,6 +153,7 @@ function runApp () {
             // objectify
             const  { name, id, email, github} = answers; 
             const engineer = new Engineer (name, id, email, github);
+            engineer.role = engineer.getRole();
             employees.push(engineer);
             pickRole();
         }); 
@@ -162,13 +165,12 @@ function runApp () {
         // objectify
         const  { name, id, email, school} = answers; 
         const intern = new Intern (name, id, email, school);
+        intern.role = intern.getRole();
         employees.push(intern);
         pickRole();
         });
     }
-           
-        // need genereate html
-        // css styling
-
 } // end runApp
 runApp();
+
+module.exports = employees;
