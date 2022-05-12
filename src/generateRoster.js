@@ -15,7 +15,6 @@ function generateRoster(employees) {
         // no more employees, create html end
         else {
             makeBottom();
-            console.log('create bottom');
         }
     }
 } //end generateRoster
@@ -69,15 +68,14 @@ function makeCard(employees,i) {
     }
     else if (employees[i].role === "Engineer") {
         const {name, id, email, github, role} = employees[i];
-        uniqueInfo = "GitHub:";
-        genCard(name,id,email,github,role,uniqueInfo);
-
+        uniqueInfo = 'GitHub: <a href="http://github.com/' + github + '">' + github + '</a>';
+        const dummyVar = "";
+        genCard(name,id,email,dummyVar,role,uniqueInfo);
     }
     else {
         const {name, id, email, school, role} = employees[i];
         uniqueInfo = "School:";
         genCard(name,id,email,school,role,uniqueInfo);
-
     }
     function genCard(name,id,email,other,role,uniqueInfo) {
         let card = `  
